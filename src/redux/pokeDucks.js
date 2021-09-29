@@ -34,8 +34,14 @@ export default function pokeReducer (state = dataInicial, action){
 //acciones
 export const obtenerPokemonesAccion = ( )=> async(dispatch, getState)=>{
     
-    //const offset = getState().pokemones.offset
-    //desctrucurado const {offset} = getState().pokemones
+     if(localStorage.getItem('offset=0')){
+        console.log('datos guardados')
+        dispatch({
+            type: OBTENER_POKEMONES_EXITO, 
+            payload:JSON.parse(localStorage.getItem('offset=0'))
+        })
+        return
+    } 
 
     
     try {
@@ -44,7 +50,7 @@ export const obtenerPokemonesAccion = ( )=> async(dispatch, getState)=>{
             type: OBTENER_POKEMONES_EXITO, 
             payload: rest.data
         })
-        //rest.data.results
+        localStorage.setItem('offset=0', JSON.stringify(rest.data))
     } catch (error) {
         console.log(error)
     }
