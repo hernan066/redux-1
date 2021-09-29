@@ -58,9 +58,17 @@ export const obtenerPokemonesAccion = ( )=> async(dispatch, getState)=>{
 
 export const siguientePokemonAccion = ()=> async(dispatch, getState)=>{
     
-    //const offset = getState().pokemones.offset
-    //const siguiente = offset + numero
+    
     const {next} = getState().pokemones
+
+    if(localStorage.getItem(next)){
+        console.log('datos guardados')
+        dispatch({
+            type: OBTENER_POKEMONES_EXITO, 
+            payload:JSON.parse(localStorage.getItem(next))
+        })
+        return
+    } 
     
     try {
         const res = await axios.get(next)
@@ -68,6 +76,7 @@ export const siguientePokemonAccion = ()=> async(dispatch, getState)=>{
             type : SIGUIENTE_POKEMONES_EXITO,
             payload:res.data
         })
+        localStorage.setItem(next, JSON.stringify(res.data))
     } catch (error) {
         console.log(error)
     }
@@ -77,6 +86,15 @@ export const anteriorPokemonAccion = ()=> async(dispatch, getState)=>{
     
     
     const {previous} = getState().pokemones
+
+    if(localStorage.getItem(previous)){
+        console.log('datos guardados')
+        dispatch({
+            type: OBTENER_POKEMONES_EXITO, 
+            payload:JSON.parse(localStorage.getItem(previous))
+        })
+        return
+    } 
     
     try {
         const res = await axios.get(previous)
@@ -84,6 +102,7 @@ export const anteriorPokemonAccion = ()=> async(dispatch, getState)=>{
             type : ANTERIOR_POKEMONES_EXITO,
             payload:res.data
         })
+        localStorage.setItem(previous, JSON.stringify(res.data))
     } catch (error) {
         console.log(error)
     }
