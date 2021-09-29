@@ -1,11 +1,11 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
+import pokeReducer from './pokeDucks';
 
-import pokesReducer from './pokesDucks';
 
 const rootReducer = combineReducers({
-    pokemones: pokesReducer
+    pokemones: pokeReducer
     //otroReducer: masReducer
 })
 
