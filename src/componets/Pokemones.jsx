@@ -6,7 +6,7 @@ import { obtenerPokemonesAccion, siguientePokemonAccion } from '../redux/pokeDuc
 const Pokemones = () => {
     
     const dispatch = useDispatch();
-    const pokemones = useSelector(store => store.pokemones.array);
+    const pokemones = useSelector(store => store.pokemones.results);
     console.log(pokemones)
     
     return (

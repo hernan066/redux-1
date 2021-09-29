@@ -5,8 +5,11 @@ import axios from "axios";
 
 //constantes
 const dataInicial = {
-    array : [],
-    offset : 0
+    count:0,
+    next:null,
+    previous:null,
+    results: []
+
 }
 
 //constantes-types
@@ -17,10 +20,10 @@ const SIGUIENTE_POKEMONES_EXITO = "SIGUIENTE_POKEMONES_EXITO";
 export default function pokeReducer (state = dataInicial, action){
     switch (action.type) {
         case OBTENER_POKEMONES_EXITO:
-            return{...state, array:action.payload}
+            return{...state, ...action.payload}
         
         case SIGUIENTE_POKEMONES_EXITO:
-            return{...state, array:action.payload.array, offset: action.payload.offset}
+            return{...state, ...action.payload}
         default:
             return state;
     }
@@ -28,15 +31,15 @@ export default function pokeReducer (state = dataInicial, action){
 //acciones
 export const obtenerPokemonesAccion = ( )=> async(dispatch, getState)=>{
     
-    const offset = getState().pokemones.offset
+    //const offset = getState().pokemones.offset
     //desctrucurado const {offset} = getState().pokemones
 
     
     try {
-        const rest = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`)
+        const rest = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`)
         dispatch({
             type: OBTENER_POKEMONES_EXITO, 
-            payload: rest.data.results
+            payload: rest.data
         })
         //rest.data.results
     } catch (error) {
@@ -46,17 +49,15 @@ export const obtenerPokemonesAccion = ( )=> async(dispatch, getState)=>{
 
 export const siguientePokemonAccion = (numero)=> async(dispatch, getState)=>{
     
-    const offset = getState().pokemones.offset
-    const siguiente = offset + numero
+    //const offset = getState().pokemones.offset
+    //const siguiente = offset + numero
+    const {next} = getState().pokemones
     
     try {
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${siguiente}&limit=20`)
+        const res = await axios.get(next)
         dispatch({
             type : SIGUIENTE_POKEMONES_EXITO,
-            payload:{
-                array : res.data.results,
-                offset: siguiente
-            }
+            payload:res.data
         })
     } catch (error) {
         console.log(error)
