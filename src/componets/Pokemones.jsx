@@ -5,7 +5,9 @@ import {
   anteriorPokemonAccion,
   obtenerPokemonesAccion,
   siguientePokemonAccion,
+  unPokeDetalleAccion,
 } from "../redux/pokeDucks";
+import Detalle from "./Detalle";
 
 const Pokemones = () => {
   const dispatch = useDispatch();
@@ -46,13 +48,19 @@ const Pokemones = () => {
             <ul className="list-group mt-3 mb-3">
                 {pokemones.map((item) => (
                 <li className="list-group-item text-uppercase" key={item.name}>{item.name}
-                    <button className="btn btn-dark btn-sm float-end">Info</button>
+                    <button 
+                        className="btn btn-dark btn-sm float-end"
+                        onClick={()=> dispatch(unPokeDetalleAccion(item.url))}
+                    >Info</button>
                 </li>
                 ))}
             </ul>
         </div> 
          <div className="col-md-6">
-                    detalle de un pokemon
+                    <h3>Detalle</h3>
+
+                    <hr />
+                    <Detalle />
         </div>           
     </div>
   );
