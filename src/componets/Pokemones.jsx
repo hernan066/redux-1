@@ -14,32 +14,46 @@ const Pokemones = () => {
   const previous = useSelector((store) => store.pokemones.previous);
 
   return (
-    <div>
-      <h1>Lista de pokemones</h1>
+    <div className="row">
 
-      <hr />
-      {pokemones.length === 0 && (
-        <button onClick={() => dispatch(obtenerPokemonesAccion())}>
-          Obtener pokemones
-        </button>
-      )}
+        <div className="col-md-6">
+           
+            <h3>Lista de pokemones</h3>
 
-      {next && (
-        <button onClick={() => dispatch(siguientePokemonAccion())}>
-          Siguiente
-        </button>
-      )}
-      {previous && (
-        <button onClick={() => dispatch(anteriorPokemonAccion())}>
-          Anterior
-        </button>
-      )}
+            <hr />
+            
+            <div className="d-flex justify-content-between">
 
-      <ul>
-        {pokemones.map((item) => (
-          <li key={item.name}>{item.name}</li>
-        ))}
-      </ul>
+                    {pokemones.length === 0 && (
+                        <button className="btn btn-dark" onClick={() => dispatch(obtenerPokemonesAccion())}>
+                        Obtener pokemones
+                        </button>
+                    )}
+
+                    {next && (
+                        <button className="btn btn-dark" onClick={() => dispatch(siguientePokemonAccion())}>
+                        Siguiente
+                        </button>
+                    )}
+                    {previous && (
+                        <button className="btn btn-dark" onClick={() => dispatch(anteriorPokemonAccion())}>
+                        Anterior
+                        </button>
+                    )}
+            </div>
+            
+
+            <ul className="list-group mt-3 mb-3">
+                {pokemones.map((item) => (
+                <li className="list-group-item text-uppercase" key={item.name}>{item.name}
+                    <button className="btn btn-dark btn-sm float-end">Info</button>
+                </li>
+                ))}
+            </ul>
+        </div> 
+         <div className="col-md-6">
+                    detalle de un pokemon
+        </div>           
     </div>
   );
 };
