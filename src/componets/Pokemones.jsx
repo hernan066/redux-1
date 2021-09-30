@@ -8,6 +8,7 @@ import {
   unPokeDetalleAccion,
 } from "../redux/pokeDucks";
 import Detalle from "./Detalle";
+import Navbar from "./Navbar";
 
 const Pokemones = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const Pokemones = () => {
 
   return (
     <div className="row">
-
+        <Navbar />
         <div className="col-md-6">
            
             <h3>Lista de pokemones</h3>
