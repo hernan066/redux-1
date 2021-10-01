@@ -1,19 +1,83 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Acme', sans-serif;
+ 
+}
+
 body{
     background-image: url("./background.jpg");
     background-size: cover;
     
 }
-nav{
-    background-color: rgba(203, 241, 203, 0.781);
-    height: 150px;
-    
-    text-align: right;
-    margin-left: 15px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    
-    
+/* ==============navbar======================= */
+
+a li button{
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 20px;
 }
+
+
+
+
+#barra{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  background-color: rgba(36, 114, 216, 0.616);
+}
+.logo{
+  cursor: pointer;
+  height: 50px;
+  display: block;
+  margin-right: 20px;
+  
+  
+}
+.nav_link{
+  list-style: none;
+}
+.nav_link li{
+  display: inline-block;
+  padding: 0px 20px;
+  margin-top: 12px;
+  
+  
+}
+.nav_link li a{
+  transition: all 0,3s ease 0s;
+  text-decoration: none;
+  color: white;
+}
+.nav_link li a:hover{
+  color: rgb(229, 229, 238);
+}
+button{
+  padding:9px  25px;
+  background-color: rgb(169, 0, 28);
+  border: none;
+  border-radius: 50px;
+  transition: all 0,3s ease 0s;
+  cursor: pointer;
+  color: white;
+
+}
+button:hover{
+  background-color: rgb(122, 4, 24);
+}
+
+
+
+
+
+
+
+
+
+
 nav h1{
     margin-top: 45px;
     margin-right: 35px;
@@ -50,4 +114,7 @@ nav h1{
 #foto img{
     height: 100%;
     width: 100%;
+}
+#buscar{
+  width: 40%;
 }
