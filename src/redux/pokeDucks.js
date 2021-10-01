@@ -16,7 +16,8 @@ const dataInicial = {
 const  OBTENER_POKEMONES_EXITO = "OBTENER_POKEMONES_EXITO";
 const SIGUIENTE_POKEMONES_EXITO = "SIGUIENTE_POKEMONES_EXITO";
 const ANTERIOR_POKEMONES_EXITO = "ANTERIOR_POKEMONES_EXITO";
-const POKE_INFO_EXITO = "POKE_INFO_EXITO"
+const POKE_INFO_EXITO = "POKE_INFO_EXITO";
+const POKE_BUSCAR_EXITO="POKE_BUSCAR_EXITO";
 
 //reducer
 export default function pokeReducer (state = dataInicial, action){
@@ -30,6 +31,8 @@ export default function pokeReducer (state = dataInicial, action){
             return{...state, ...action.payload}
         case POKE_INFO_EXITO:
             return{...state, unPokemon: action.payload}
+        case POKE_BUSCAR_EXITO:
+                return{...state, unPokemon: action.payload}
         default:
             return state;
     }
@@ -121,6 +124,32 @@ export const unPokeDetalleAccion=(url="https://pokeapi.co/api/v2/pokemon/1/")=>a
         console.log(res.data)
         dispatch({
             type: POKE_INFO_EXITO,
+            payload:{
+                nombre: res.data.name,
+                peso: res.data.weight,
+                altura: res.data.height,
+                hp: res.data.stats[0].base_stat, 
+                ataque: res.data.stats[1].base_stat, 
+                defensa: res.data.stats[2].base_stat, 
+                ataqueEspecial: res.data.stats[3].base_stat, 
+                defensaEspecial: res.data.stats[4].base_stat, 
+                velocidad: res.data.stats[5].base_stat, 
+                tipo0: res.data.types[0].type.name, 
+                //tipo1: res.data.types[1].type.name, 
+                foto1: res.data.sprites.other.dream_world.front_default,
+                foto: res.data.sprites.front_default
+            }
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const buscarPokemonAccion=(buscar)=>async(dispatch, getState)=>{
+    try {
+        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${buscar}`);
+        dispatch({
+            type: POKE_BUSCAR_EXITO,
             payload:{
                 nombre: res.data.name,
                 peso: res.data.weight,
