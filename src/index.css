@@ -81,7 +81,7 @@ button:hover{
 
 
 
-
+/* =================Detalle================= */
 nav h1{
     margin-top: 45px;
     margin-right: 35px;
@@ -95,6 +95,7 @@ nav h1{
     border: #ccc 1px solid;
     padding: 22px;
     background-color: rgba(203, 241, 203, 0.781);
+    margin-bottom: 20px;
 }
 .detalle h4{
     margin-top: 5px;
@@ -120,5 +121,5 @@ nav h1{
     width: 100%;
 }
 #buscar{
-  width: 40%;
+  width: 95%;
 }

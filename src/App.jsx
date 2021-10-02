@@ -7,6 +7,8 @@ import Navbar from "./componets/Navbar";
 import Login from "./componets/Login";
 import Detalle from "./componets/Detalle";
 import Buscar from "./componets/Buscar";
+import Register from "./componets/Register";
+import ForgotPassword from "./componets/ForgotPassword";
 
 function App() {
   const store = generateStore();
@@ -17,6 +19,12 @@ function App() {
         <Router>
           <Navbar />
           <Switch>
+          <Route path="/recover_password">
+              <ForgotPassword />
+            </Route>
+          <Route path="/register">
+              <Register />
+            </Route>
             <Route path="/login">
               <Login />
             </Route>
