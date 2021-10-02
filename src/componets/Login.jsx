@@ -1,13 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
   return (
     <div className="contenedor">
-      <div className="center">
+      <div className="center_login">
         
         <form>
             <h2>Login</h2>
+            
             
           <div className="txt_field">
             <input type="text" required />
@@ -21,12 +23,15 @@ const Login = () => {
             <label>Password</label>
           </div>
 
-          <div className="pass">Forgot Password?</div>
+          <div className="pass"> <Link to="/recover_password" exact>Forgot Password?</Link> </div>
 
           <input type="submit" value="Login" />
 
           <div className="signup_link">
-            Not a member? <a href="#">Signup</a>
+            Not a member? <Link to="/register" exact>Signup</Link>
+            
+            
+            
           </div>
         </form>
       </div>
