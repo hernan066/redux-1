@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import Pokemones from "./componets/Pokemones";
 import generateStore from "./redux/store";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Navbar from "./componets/Navbar";
 import Login from "./componets/Login";
 import Detalle from "./componets/Detalle";
@@ -22,7 +22,7 @@ function App() {
           <Route path="/recover_password">
               <ForgotPassword />
             </Route>
-          <Route path="/register">
+          <Route path="/register" exact>
               <Register />
             </Route>
             <Route path="/login">

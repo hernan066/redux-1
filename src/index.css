@@ -123,3 +123,10 @@ nav h1{
 #buscar{
   width: 95%;
 }
+
+/* =================error formulario================= */
+.error-formulario{
+    color: crimson;
+    text-align: center;
+    margin-top: 10px;
+}
