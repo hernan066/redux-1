@@ -1,132 +1,265 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
- 
+  font-family: "Poppins", sans-serif;
 }
 
-body{
-    background-image: url("./background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    backdrop-filter: blur(3px);
-    
-    
-    
+body {
+  background-image: url("./background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(3px);
 }
 /* ==============navbar======================= */
 
-a li button{
+a li button {
   font-weight: 500;
   text-decoration: none;
   font-size: 20px;
 }
 
-
-
-
-#barra{
+#barra {
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
+
   background-color: rgba(36, 114, 216, 0.616);
 }
-.logo{
+.logo {
   cursor: pointer;
   height: 50px;
   display: block;
   margin-right: 20px;
-  
-  
 }
-.nav_link{
+.nav_link {
   list-style: none;
 }
-.nav_link li{
+.nav_link li {
   display: inline-block;
   padding: 0px 20px;
   margin-top: 12px;
-  
-  
 }
-.nav_link li a{
-  transition: all 0,3s ease 0s;
+.nav_link li a {
+  transition: all 0, 3s ease 0s;
   text-decoration: none;
   color: white;
 }
-.nav_link li a:hover{
+.nav_link li a:hover {
   color: rgb(229, 229, 238);
 }
-button{
-  padding:9px  25px;
+button {
+  padding: 9px 25px;
   background-color: rgb(169, 0, 28);
   border: none;
   border-radius: 50px;
-  transition: all 0,3s ease 0s;
+  transition: all 0, 3s ease 0s;
   cursor: pointer;
   color: white;
-
 }
-button:hover{
+button:hover {
   background-color: rgb(122, 4, 24);
 }
 
-
-
-
-
-
-
-
-
 /* =================Detalle================= */
-nav h1{
-    margin-top: 45px;
-    margin-right: 35px;
+nav h1 {
+  margin-top: 45px;
+  margin-right: 35px;
 }
 
-.detalle{
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    align-items: center;
-    border: #ccc 1px solid;
-    padding: 22px;
-    background-color: rgba(203, 241, 203, 0.781);
-    margin-bottom: 20px;
+.detalle {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  align-items: center;
+  border: #ccc 1px solid;
+  padding: 22px;
+  background-color: rgba(255, 248, 220, 0.85);
+  margin-bottom: 20px;
 }
-.detalle h4{
-    margin-top: 5px;
-    background-color: rgb(36, 33, 33);
-    padding: 10px;
-    border-radius: 10px;
-    color: ghostwhite;
-    letter-spacing: 2px;
+.detalle h4 {
+  margin-top: 5px;
+  background-color: rgb(36, 33, 33);
+  padding: 10px;
+  border-radius: 10px;
+  color: ghostwhite;
+  letter-spacing: 2px;
 }
 
-
-#foto{
-    
-    background-color: rgb(37, 163, 37);
-    border-radius: 100%;
-    height: 150px;
-    width: 150px;
-    
-    
+#foto {
+  background-color: rgb(37, 163, 37);
+  border-radius: 100%;
+  height: 150px;
+  width: 150px;
 }
-#foto img{
-    height: 100%;
-    width: 100%;
+#foto img {
+  height: 100%;
+  width: 100%;
 }
-#buscar{
+#buscar {
   width: 95%;
 }
 
 /* =================error formulario================= */
-.error-formulario{
-    color: crimson;
-    text-align: center;
-    margin-top: 10px;
+.error-formulario {
+  color: crimson;
+  margin: 0px;
+
+  font-size: 12px;
+}
+
+/* =================Register================= */
+.contenedor {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.center_register {
+  display: flex;
+  
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 25px;
+  width: 500px;
+  height: 500px;
+  background-color: rgba(255, 248, 220, 0.85);
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.center_register form {
+  
+  width: 100%;
+}
+
+.center_register h2 {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+  
+}
+
+
+/* ========================Boton general============================= */
+
+input[type="submit"] {
+ 
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: 2px;
+}
+input[type="submit"]:hover{
+  border-color: #2691d9;
+  transition: .5s;
+}
+
+/* ========================Login============================= */
+
+
+.center_login {
+  display: flex;
+  
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 25px;
+  width: 500px;
+  height: 450px;
+  background-color: rgba(255, 248, 220, 0.85);
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.center_login form {
+  
+  width: 100%;
+}
+
+.center_login h2 {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+  
+}
+.pass a{
+  margin: -5px 0 20px 5px;
+  color: #a6a6a6;
+  cursor: pointer;
+  text-decoration: none;
+}
+.pass:hover{
+  text-decoration: underline;
+}
+input[type="submit"]{
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+input[type="submit"]:hover{
+  border-color: #2691d9;
+  transition: .5s;
+}
+.signup_link{
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+}
+.signup_link a{
+  color: #2691d9;
+  text-decoration: none;
+}
+.signup_link a:hover{
+  text-decoration: underline;
+}
+
+/* ========================Recupera pass============================= */
+.center_password {
+  display: flex;
+  
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 25px;
+  width: 500px;
+  height: 350px;
+  background-color: rgba(255, 248, 220, 0.85);
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.center_password form {
+  
+  width: 100%;
+}
+
+.center_password h2 {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+  
+}
+
+/* ===============================Lista poke================================ */
+.lista-poke ul li{
+  background-color: rgba(255, 248, 220, 0.85);
+}
+h3{
+  text-align: center;
+  margin-top: 20px;
 }

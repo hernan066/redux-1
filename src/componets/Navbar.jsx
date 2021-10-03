@@ -7,7 +7,7 @@ const Navbar = () => {
     <header>
       <div id="barra">
         <div id="marco-logo">
-          <Link to="/" exact>
+          <Link to="/">
             <img className="logo" src={logo} alt="logo" />
           </Link>
         </div>
@@ -20,12 +20,12 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/buscar" exact>
+              <NavLink to="/buscar">
                 Buscar
               </NavLink>
             </li>
             <li>
-              <NavLink className="btn btn-danger " to="/login" exact>
+              <NavLink className="btn btn-danger " to="/login">
                 Login
               </NavLink>
             </li>
