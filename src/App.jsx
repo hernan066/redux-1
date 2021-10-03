@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import Pokemones from "./componets/Pokemones";
 import generateStore from "./redux/store";
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./componets/Navbar";
 import Login from "./componets/Login";
 import Detalle from "./componets/Detalle";
@@ -19,10 +19,10 @@ function App() {
         <Router>
           <Navbar />
           <Switch>
-          <Route path="/recover_password">
+            <Route path="/recover_password">
               <ForgotPassword />
             </Route>
-          <Route path="/register" exact>
+            <Route path="/register">
               <Register />
             </Route>
             <Route path="/login">

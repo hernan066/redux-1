@@ -49,7 +49,7 @@ const Pokemones = () => {
                         )}
                 </div>
                 
-
+            <div className="lista-poke">
                 <ul className="list-group mt-3 mb-3">
                     {pokemones.map((item) => (
                     <li className="list-group-item text-uppercase" key={item.name}> {item.name}
@@ -60,6 +60,8 @@ const Pokemones = () => {
                     </li>
                     ))}
                 </ul>
+            </div>
+                
             </div> 
             <div className="col-md-6">
                         <h3>Detalle</h3>
