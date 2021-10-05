@@ -1,10 +1,15 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { ingresoUsuarioAccion } from "../redux/usuarioDucks";
 
 /* import "./Register.css"; */
 
 const Register = () => {
+  
+  const dispatch = useDispatch();
+  
   const formik = useFormik({
     initialValues: {
       userName: "",
@@ -114,7 +119,7 @@ const Register = () => {
 
           <input type="submit" value="Register" />
                       
-          <div className="google-btn">
+          <div className="google-btn" onClick={()=> dispatch(ingresoUsuarioAccion())} >
             <div className="google-icon-wrapper">
               <img
                 alt=""
