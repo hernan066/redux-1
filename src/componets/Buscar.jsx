@@ -12,6 +12,7 @@ function Buscar() {
   
     
     const [buscar, setBuscar] = useState("");
+    
 
   const enviarDatos = (e) => {
     e.preventDefault();
@@ -19,12 +20,14 @@ function Buscar() {
 
     if (!buscar.trim()) {
       console.log("busqueda vacia");
+      
       return;
     }
     console.log(buscar);
     
     e.target.reset()
     setBuscar("");
+    
   };
 
   return (
@@ -46,7 +49,7 @@ function Buscar() {
             Buscar
           </button>
         </form>
-
+       
         <Detalle />
       </div>
     </div>
