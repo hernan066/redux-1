@@ -24,6 +24,7 @@ const Navbar = () => {
                 Buscar
               </NavLink>
             </li>
+            
             <li>
               <NavLink className="btn btn-danger " to="/login">
                 Login

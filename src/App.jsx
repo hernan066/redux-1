@@ -10,6 +10,9 @@ import Buscar from "./componets/Buscar";
 import Register from "./componets/Register";
 import ForgotPassword from "./componets/ForgotPassword";
 
+
+
+
 function App() {
   const store = generateStore();
 
@@ -34,6 +37,7 @@ function App() {
             <Route path="/buscar">
               <Buscar />
             </Route>
+           
             <Route path="/" exact>
               <Pokemones />
             </Route>
