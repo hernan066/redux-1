@@ -32,6 +32,19 @@ const Login = () => {
 
           <input type="submit" value="Login" />
 
+          <div className="google-btn">
+            <div className="google-icon-wrapper">
+              <img
+                alt=""
+                className="google-icon"
+                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+              />
+            </div>
+            <p className="btn-text">
+              <b>Login with google</b>
+            </p>
+          </div>
+
           <div className="signup_link">
             Not a member? <Link to="/register">Signup</Link>
           </div>
