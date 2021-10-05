@@ -30,6 +30,11 @@ const Navbar = () => {
                 Login
               </NavLink>
             </li>
+            <li>
+              <NavLink className="btn btn-danger " to="/">
+                Logout
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>

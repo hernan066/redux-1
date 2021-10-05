@@ -1,7 +1,8 @@
 import React from "react";
-import { Provider } from "react-redux";
 import Pokemones from "./componets/Pokemones";
-import generateStore from "./redux/store";
+
+
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./componets/Navbar";
 import Login from "./componets/Login";
@@ -14,10 +15,10 @@ import ForgotPassword from "./componets/ForgotPassword";
 
 
 function App() {
-  const store = generateStore();
+  
 
   return (
-    <Provider store={store}>
+    
       <div>
         <Router>
           <Navbar />
@@ -44,7 +45,7 @@ function App() {
           </Switch>
         </Router>
       </div>
-    </Provider>
+    
   );
 }
 

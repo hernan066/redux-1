@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
 * {
   margin: 0px;
   padding: 0px;
@@ -124,7 +126,7 @@ nav h1 {
   justify-content: space-between;
   padding: 25px;
   width: 500px;
-  height: 470px;
+  height: 540px;
   background-color: rgba(255, 248, 220, 0.85);
   border-radius: 10px;
   margin-top: 30px;
@@ -174,7 +176,7 @@ input[type="submit"]:hover{
   justify-content: space-between;
   padding: 25px;
   width: 500px;
-  height: 450px;
+  height: 500px;
   background-color: rgba(255, 248, 220, 0.85);
   border-radius: 10px;
   margin-top: 30px;
@@ -266,8 +268,47 @@ h3{
 }
 
 /* ===============================Lista poke================================ */
-.card-poke{
- display: flex;
- height: 300px;
- margin: 20px;
+.google-btn {
+  width: 100%;
+  height: 42px;
+  background-color: #dc3545;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  margin-top: 30px;
+  overflow: hidden;
 }
+.google-btn .google-icon-wrapper {
+  position: absolute;
+  margin-top: 1px;
+  margin-left: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.google-btn .google-icon {
+  position: absolute;
+  margin-top: 11px;
+  margin-left: 11px;
+  width: 18px;
+  height: 18px;
+}
+.google-btn .btn-text {
+  display: flex;
+  margin-top: 5px;
+  padding-bottom: 10px;
+  justify-content: center;
+  
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-family: "Roboto";
+}
+.google-btn:hover {
+  box-shadow: 0 0 6px #d62234;
+}
+.google-btn:active {
+  background: #a00515;
+}
+
+
