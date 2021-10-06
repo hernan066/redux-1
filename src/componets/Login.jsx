@@ -1,9 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, withRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { ingresoUsuarioAccion } from "../redux/usuarioDucks";
 /* import "./Login.css"; */
 
-const Login = () => {
+////////////////////////////////////////////////
+///////se seleciona con crl + d en VS//////////
+///////////////////////////////////////////////
+const Login = ({history}) => {
+  
+  const dispatch = useDispatch();
+  const loading = useSelector(store => store.usuario.loading);
+  const activo = useSelector(store => store.usuario.activo);
+
+  useEffect(() => {
+    console.log(activo);
+    if(activo){
+      history.push("/")
+    }
+  }, [activo, history])
+  
   return (
+    
+    
+    
     <div className="contenedor">
       <div className="center_login">
         <form>
@@ -32,7 +52,13 @@ const Login = () => {
 
           <input type="submit" value="Login" />
 
-          <div className="google-btn">
+          
+          {/* transformar el div en un boton, modificar css */}
+          <div
+            className="google-btn" 
+            onClick={()=> dispatch(ingresoUsuarioAccion())} 
+            disable = {loading}
+          >
             <div className="google-icon-wrapper">
               <img
                 alt=""
@@ -54,4 +80,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default withRouter (Login);

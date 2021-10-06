@@ -27,7 +27,7 @@ export default function usuarioReducer(state = dataInicial, action) {
     case USUARIO_ERROR:
       return { ...dataInicial };
     case USUARIO_EXITO:
-      return { ...state, loading: false, user: action.payload };
+      return { ...state, loading: false, activo: true, user: action.payload };
     default:
       return { ...state };
   }
