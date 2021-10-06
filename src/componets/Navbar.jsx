@@ -1,9 +1,26 @@
 import React from "react";
 import logo from "./logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, withRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { cerrarSesionAccion } from "../redux/usuarioDucks";
 
-const Navbar = () => {
+
+const Navbar = ({history}) => {
+ 
+  const dispatch = useDispatch();
+  const activo = useSelector(store => store.usuario.activo);
+  const usuario = useSelector(store => store.usuario.user.nombre);
+
+  const cerrarSesion = ()=>{
+    dispatch(cerrarSesionAccion());
+    history.push('/login');
+  }
+ 
+ 
   return (
+    
+    
+    
     <header>
       <div id="barra">
         <div id="marco-logo">
@@ -25,16 +42,22 @@ const Navbar = () => {
               </NavLink>
             </li>
             
-            <li>
-              <NavLink className="btn btn-danger " to="/login">
-                Login
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="btn btn-danger " to="/">
-                Logout
-              </NavLink>
-            </li>
+            
+            {
+              activo 
+                ?  <li>
+                <button className="btn btn-danger text-capitalize " onClick={()=>cerrarSesion()} >
+                  {`Logout ${usuario} `}
+                </button>
+              </li>
+                
+                :<li> <NavLink className="btn btn-danger " to="/login">
+                  Login
+                </NavLink>
+              </li>
+            }
+           
+            
           </ul>
         </nav>
       </div>
@@ -42,4 +65,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default withRouter(Navbar);
