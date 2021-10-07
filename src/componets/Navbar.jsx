@@ -9,7 +9,7 @@ const Navbar = ({history}) => {
  
   const dispatch = useDispatch();
   const activo = useSelector(store => store.usuario.activo);
-  const usuario = useSelector(store => store.usuario.user.nombre);
+ /*  const usuario = useSelector(store => store.usuario.user.nombre); */
 
   const cerrarSesion = ()=>{
     dispatch(cerrarSesionAccion());
@@ -47,7 +47,7 @@ const Navbar = ({history}) => {
               activo 
                 ?  <li>
                 <button className="btn btn-danger text-capitalize " onClick={()=>cerrarSesion()} >
-                  {`Logout ${usuario} `}
+                  {/* {`Logout ${usuario} `} */} Cerrar sesion
                 </button>
               </li>
                 
