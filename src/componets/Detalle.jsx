@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { unPokeDetalleAccion } from "../redux/pokeDucks";
 
-const Detalle = () => {
+const Detalle = ({url}) => {
   const dispatch = useDispatch();
   useEffect(() => {
     const fetchData = () => {
@@ -13,7 +13,7 @@ const Detalle = () => {
   }, [dispatch]);
 
   const pokemon = useSelector((store) => store.pokemones.unPokemon);
-  console.log(pokemon);
+ /*  console.log(pokemon); */
 
   return pokemon ? (
     <div>

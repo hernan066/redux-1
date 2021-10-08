@@ -8,12 +8,15 @@ const dataInicial = {
     count:0,
     next:null,
     previous:null,
-    results: []
+    results: [],
+    
+
 
 }
 
 //constantes-types
 const  OBTENER_POKEMONES_EXITO = "OBTENER_POKEMONES_EXITO";
+const  OBTENER_10_POKEMONES_EXITO = "OBTENER_10_POKEMONES_EXITO";
 const SIGUIENTE_POKEMONES_EXITO = "SIGUIENTE_POKEMONES_EXITO";
 const ANTERIOR_POKEMONES_EXITO = "ANTERIOR_POKEMONES_EXITO";
 const POKE_INFO_EXITO = "POKE_INFO_EXITO";
@@ -23,6 +26,8 @@ const POKE_BUSCAR_EXITO="POKE_BUSCAR_EXITO";
 export default function pokeReducer (state = dataInicial, action){
     switch (action.type) {
         case OBTENER_POKEMONES_EXITO:
+            return{...state, ...action.payload}
+        case OBTENER_10_POKEMONES_EXITO:
             return{...state, ...action.payload}
         
         case SIGUIENTE_POKEMONES_EXITO:
@@ -52,6 +57,8 @@ export const obtenerPokemonesAccion = ( )=> async(dispatch, getState)=>{
     
     try {
         const rest = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=10`)
+        console.log(rest.data)
+    
         dispatch({
             type: OBTENER_POKEMONES_EXITO, 
             payload: rest.data
@@ -121,7 +128,7 @@ export const unPokeDetalleAccion=(url="https://pokeapi.co/api/v2/pokemon/1/")=>a
     
     try {
         const res = await axios.get(url);
-        console.log(res.data)
+       
         dispatch({
             type: POKE_INFO_EXITO,
             payload:{
@@ -170,3 +177,8 @@ export const buscarPokemonAccion=(buscar)=>async(dispatch, getState)=>{
         console.log(error)
     }
 }
+
+/////////////////////////////////////////////////////////////////////////////
+////////////////////////////codigo prueba////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+

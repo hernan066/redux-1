@@ -41,6 +41,11 @@ const Navbar = ({history}) => {
                 Buscar
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/lista">
+                Lista
+              </NavLink>
+            </li>
             
             
             {

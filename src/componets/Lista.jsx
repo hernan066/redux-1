@@ -1,70 +1,60 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import {
-  anteriorPokemonAccion,
-  obtenerPokemonesAccion,
-  siguientePokemonAccion,
-  unPokeDetalleAccion,
-} from "../redux/pokeDucks";
+import React, { useEffect, useState } from "react";
+import CardPoke from "./CardPoke";
+
+
+
 
 const Lista = () => {
     
-    const dispatch = useDispatch();
-  const pokemones = useSelector((store) => store.pokemones.results);
-  const next = useSelector((store) => store.pokemones.next);
-  const previous = useSelector((store) => store.pokemones.previous);
-    
-    return (
-        <div className="contenedor">
-             <div className="lista-poke">
-            
-            <h3>Lista de pokemones</h3>
+    const[allPokemons, setAllPokemons] = useState([])
+   const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
 
-            <hr />
-            
-            <div className="d-flex justify-content-between">
+  const getAllPokemons = async () => {
+    const res = await fetch(loadMore)
+    const data = await res.json()
 
-                    {pokemones.length === 0 && (
-                        <button className="btn btn-dark" onClick={() => dispatch(obtenerPokemonesAccion())}>
-                        Obtener pokemones
-                        </button>
-                    )}
+    setLoadMore(data.next)
 
-                    {next && (
-                        <button className="btn btn-dark" onClick={() => dispatch(siguientePokemonAccion())}>
-                        Siguiente
-                        </button>
-                    )}
-                    {previous && (
-                        <button className="btn btn-dark" onClick={() => dispatch(anteriorPokemonAccion())}>
-                        Anterior
-                        </button>
-                    )}
-            </div>
-            
-        <div className="card-poke">
-            
-                {pokemones.map((item) => (
-                <div className="card"  key={item.name}> 
-                    <img src="#" alt="Pokemon" />
-                    <div className="card-body">
-                        <h5 class="card-title text-uppercase">{item.name}</h5>
-                        <p class="card-text">{item.url}</p>
-                        <button 
-                            className="btn btn-dark btn-sm float-end"
-                            onClick={()=> dispatch(unPokeDetalleAccion(item.url))}
-                        >Info
-                        </button>
-                    </div>
-                   
-                </div>
-                ))}
-           
-        </div>
-            
-        </div> 
-        </div>
+    function createPokemonObject(results)  {
+      results.forEach( async pokemon => {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
+        const data =  await res.json()
+        setAllPokemons( currentList => [...currentList, data])
+        /* await allPokemons.sort((a, b) => a.id - b.id) */
+      })
+    }
+    createPokemonObject(data.results)
+    await console.log(allPokemons)
+  }
+
+ useEffect(() => {
+  getAllPokemons()
+ }, [])
+
+  
+  
+   return (
+    <div className="app-contaner">
+    <h3>Pokemons</h3>
+
+    <hr />
+    <div className="pokemon-container">
+      <div className="all-container">
+      
+        
+        {allPokemons.map( (pokemonStats, index) => 
+          <CardPoke
+            key={index}
+            id={pokemonStats.id}
+            image={pokemonStats.sprites.other.dream_world.front_default}
+            name={pokemonStats.name}
+            type={pokemonStats.types[0].type.name}
+          />)}
+        
+      </div>
+        <button className="load-more" onClick={() => getAllPokemons()}>Atrapar mas</button>
+    </div>
+  </div>
     )
 }
 
