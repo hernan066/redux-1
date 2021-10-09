@@ -19,9 +19,9 @@ const Detalle = ({url}) => {
     <div>
      
       
+     
       
-      
-      <div className="detalle">
+      <div className={`card-container animate__animated animate__fadeIn ${pokemon.tipo0}`}>
         <div id="foto">
           <img src={pokemon.foto1} alt="pokemon" className="mx-auto d-block"/>
         </div>
@@ -32,7 +32,7 @@ const Detalle = ({url}) => {
                 <div className="card-title text-uppercase">
                 <h4>{pokemon.nombre}</h4>
                 </div>
-                <p className="card-text">Hp: {pokemon.hp} </p>
+                {/* <p className="card-text">Hp: {pokemon.hp} </p>
                 <p className="card-text">Ataque: {pokemon.ataque} </p>
                 <p className="card-text">Defensa: {pokemon.defensa} </p>
                 <p className="card-text">Ataque Especial: {pokemon.ataqueEspecial} </p>
@@ -43,7 +43,7 @@ const Detalle = ({url}) => {
                 <p className="card-text">Tipo: {pokemon.tipo0} </p>
                 <p className="card-text">
                 Altura: {pokemon.altura} | Peso: {pokemon.peso}{" "}
-                </p>
+                </p> */}
         </div>
       </div>
     </div>

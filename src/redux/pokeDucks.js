@@ -121,7 +121,8 @@ export const anteriorPokemonAccion = ()=> async(dispatch, getState)=>{
     }
 }
 
-export const unPokeDetalleAccion=(url="https://pokeapi.co/api/v2/pokemon/1/")=>async(dispatch, getState)=>{
+export const unPokeDetalleAccion=(url)=>async(dispatch, getState)=>{
+/* export const unPokeDetalleAccion=(url="https://pokeapi.co/api/v2/pokemon/1/")=>async(dispatch, getState)=>{ */
     
   
     
