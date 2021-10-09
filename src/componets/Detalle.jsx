@@ -17,6 +17,10 @@ const Detalle = ({url}) => {
 
   return pokemon ? (
     <div>
+     
+      
+      
+      
       <div className="detalle">
         <div id="foto">
           <img src={pokemon.foto1} alt="pokemon" className="mx-auto d-block"/>
