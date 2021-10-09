@@ -413,7 +413,8 @@ h3{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 3rem 0.5rem;
+  padding: 1rem 2.5rem;
+  
   
 }
 .pokemon-container {
@@ -422,6 +423,12 @@ h3{
   align-items: center;
   justify-content: center;
 }
+.pokemon-container a{
+  text-decoration: none;
+  color: black;
+}
+
+
 .all-container {
   display: flex;
   flex-wrap: wrap;
@@ -454,7 +461,7 @@ h3{
 
 .card-title h4{
   font-size: 1.5rem;
-    line-height: 1;
+    
     margin-top: 10px;
    
 }
@@ -503,5 +510,8 @@ h3{
 }
 .steel{
   background:linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgb(184, 184, 208) 100%) ;
+}
+.ghost{
+  background:linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgb(112, 88, 152) 100%);
 }
 

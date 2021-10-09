@@ -13,6 +13,7 @@ import ForgotPassword from "./componets/ForgotPassword";
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Lista from "./componets/Lista";
+import DetallePoke from "./componets/DetallePoke";
 
 
 
@@ -64,6 +65,7 @@ function App() {
         <Router>
           <Navbar />
           <Switch>
+            <Route component={DetallePoke} path="/detalle" exact />
             <Route component={Lista} path="/lista" exact />
             <Route component={ForgotPassword} path="/recover_password" exact />
             <Route component={Register} path="/register" exact/>
