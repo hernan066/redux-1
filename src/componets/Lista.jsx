@@ -52,7 +52,7 @@ const Lista = () => {
           />)}
         
       </div>
-        <button className="load-more" onClick={() => getAllPokemons()}>Atrapar mas</button>
+        <button className="btn btn-danger mt-3 lm" onClick={() => getAllPokemons()}>Atrapar mas</button>
     </div>
   </div>
     )
