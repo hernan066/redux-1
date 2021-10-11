@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {
@@ -16,6 +16,14 @@ const Pokemones = () => {
   const next = useSelector((store) => store.pokemones.next);
   const previous = useSelector((store) => store.pokemones.previous);
 
+ 
+ /////////////////////////////////////////////
+ 
+   
+ 
+ ////////////////////////////////////////////////
+ 
+ 
   return (
     
     <div className="container">

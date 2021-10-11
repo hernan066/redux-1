@@ -5,14 +5,14 @@ import { unPokeDetalleAccion } from "../redux/pokeDucks";
 
 const Detalle = ({url}) => {
   const dispatch = useDispatch();
-  useEffect(() => {
+   useEffect(() => {
     const fetchData = () => {
       dispatch(unPokeDetalleAccion());
     };
     fetchData();
-  }, [dispatch]);
+  }, [dispatch]); 
 
-  const pokemon = useSelector((store) => store.pokemones.unPokemon);
+  const pokemon = useSelector((store) => store.pokemones.buscarPokemon);
  /*  console.log(pokemon); */
 
   return pokemon ? (

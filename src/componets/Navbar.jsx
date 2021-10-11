@@ -36,6 +36,7 @@ const Navbar = ({history}) => {
                 Home
               </NavLink>
             </li>
+           
             <li>
               <NavLink to="/buscar">
                 Buscar
