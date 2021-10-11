@@ -4,10 +4,17 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import pokeReducer from './pokeDucks';
 import usuarioReducer, { leerUsuarioActivoAccion } from './usuarioDucks';
 
+import speciesReducer from './speciesDuks';
+import evolutionReducer from './evolucionDucks';
+import cardPokeReducer from './cardPokeDucks';
+
 
 const rootReducer = combineReducers({
     pokemones: pokeReducer,
-    usuario: usuarioReducer
+    usuario: usuarioReducer,
+    species: speciesReducer,
+    evoluciones: evolutionReducer,
+    cardPoke : cardPokeReducer
     //otroReducer: masReducer
 })
 
