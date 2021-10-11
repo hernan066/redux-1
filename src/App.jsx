@@ -18,6 +18,7 @@ import DetallePoke from "./componets/DetallePoke";
 
 
 
+
 function App() {
   
   const [firebaseUser, setFirebaseUser] = useState(false);
@@ -65,6 +66,7 @@ function App() {
         <Router>
           <Navbar />
           <Switch>
+           
             <Route component={DetallePoke} path="/detalle" exact />
             <Route component={Lista} path="/lista" exact />
             <Route component={ForgotPassword} path="/recover_password" exact />

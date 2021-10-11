@@ -5,7 +5,7 @@ import axios from "axios";
 
 //constantes
 const dataInicial = {
-    count:0,
+    
     next:null,
     previous:null,
     results: [],
@@ -37,7 +37,7 @@ export default function pokeReducer (state = dataInicial, action){
         case POKE_INFO_EXITO:
             return{...state, unPokemon: action.payload}
         case POKE_BUSCAR_EXITO:
-                return{...state, unPokemon: action.payload}
+                return{...state, buscarPokemon: action.payload}
         default:
             return state;
     }

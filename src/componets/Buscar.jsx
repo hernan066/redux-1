@@ -7,7 +7,7 @@ import Detalle from "./Detalle";
 function Buscar() {
     
     const dispatch = useDispatch();
-    const pokemon = useSelector((store) => store.pokemones.unPokemon);
+    const pokemon = useSelector((store) => store.pokemones.buscarPokemon);
     console.log(pokemon)
   
     

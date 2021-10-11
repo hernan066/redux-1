@@ -1,5 +1,7 @@
 import React from 'react'
 import Detalle from './Detalle'
+import Especies from './infoPokemon/Especies'
+
 import Stats from './Stats'
 
 const DetallePoke = () => {
@@ -11,6 +13,8 @@ const DetallePoke = () => {
             
             <Detalle />
             <Stats/>
+            <Especies/>
+            
         </div>
     )
 }
