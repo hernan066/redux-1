@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { unPokeDetalleAccion } from "../redux/pokeDucks";
+import { unPokeDetalleAccion } from "../../redux/pokeDucks";
 
 const Detalle = ({url}) => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const Detalle = ({url}) => {
     fetchData();
   }, [dispatch]); 
 
-  const pokemon = useSelector((store) => store.pokemones.buscarPokemon);
+  const pokemon = useSelector((store) => store.pokemones.unPokemon);
  /*  console.log(pokemon); */
 
   return pokemon ? (

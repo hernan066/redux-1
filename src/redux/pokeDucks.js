@@ -171,7 +171,8 @@ export const buscarPokemonAccion=(buscar)=>async(dispatch, getState)=>{
                 tipo0: res.data.types[0].type.name, 
                 //tipo1: res.data.types[1].type.name, 
                 foto1: res.data.sprites.other.dream_world.front_default,
-                foto: res.data.sprites.front_default
+                foto: res.data.sprites.front_default,
+                species : res.data.species.url
             }
         })
     } catch (error) {

@@ -2,28 +2,27 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { obtenerEvolutionAccion } from '../../redux/evolucionDucks';
 
+
 const Evoluciones = () => {
     
-    const data = useSelector((store) => store.species.species);
-    const dataEvo = useSelector((store) => store.evoluciones);
+     const url = useSelector((store) => store.species.pokemonSpecies.url);
+    const data = useSelector((store) => store.evoluciones.pokemonEvolucion1);
     
-    /* const dispatch = useDispatch();
+    const dispatch = useDispatch();
     useEffect(() => {
       const fetchData = () => {
-        dispatch(obtenerEvolutionAccion(data.url));
+        dispatch(obtenerEvolutionAccion(url));
+       
       };
       fetchData();
-    }, [dispatch, data.url]); */
+    }, [dispatch, url]);  
     
-    /* console.log(data.url)
-    console.log(dataEvo) */
-    
-    
-    
+  
     
     return (
         <div>
             <h3>Evoluciones</h3>
+            <p>Evoluciona en :  {data.evo1} - {data.evo2} - {data.evo3}</p>
         </div>
     )
 }

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+
 import { NavLink } from "react-router-dom";
+
 import CardPoke from "./CardPoke";
+
 
 
 
@@ -34,6 +37,9 @@ const Lista = () => {
     getAllPokemons();
   }, []);
 
+  
+ 
+
   return (
     <div className="app-contaner">
       <h3>Pokemons</h3>
@@ -41,7 +47,7 @@ const Lista = () => {
       <hr />
 
       <div className="pokemon-container">
-        <NavLink to="/detalle">
+        <NavLink to="/detalle_poke" >
           <div className="all-container ">
             {allPokemons.map((pokemonStats, index) => (
               <div>
