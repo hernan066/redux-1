@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { ingresoUsuarioAccion } from "../redux/usuarioDucks";
+import { ingresoUsuarioAccion } from "../../redux/usuarioDucks";
 /* import "./Login.css"; */
 
 ////////////////////////////////////////////////

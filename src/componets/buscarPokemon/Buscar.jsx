@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { buscarPokemonAccion } from "../redux/pokeDucks";
+import { buscarPokemonAccion } from "../../redux/pokeDucks";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import Detalle from "./Detalle";
+import Detalle from "../homePokemon/Detalle";
 
 function Buscar() {
     

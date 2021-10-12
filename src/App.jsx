@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Pokemones from "./componets/Pokemones";
+import Pokemones from "./componets/homePokemon/Pokemones";
 
 
 
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Navbar from "./componets/Navbar";
-import Login from "./componets/Login";
+import Login from "./componets/login/Login";
 
-import Buscar from "./componets/Buscar";
+import Buscar from "./componets/buscarPokemon/Buscar";
 import Register from "./componets/Register";
-import ForgotPassword from "./componets/ForgotPassword";
+import ForgotPassword from "./componets/login/ForgotPassword";
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import Lista from "./componets/Lista";
-import DetallePoke from "./componets/DetallePoke";
+import Lista from "./componets/listaPokemon/Lista";
+import DetallePoke from "./componets/infoPokemon/DetallePoke";
 
 
 
@@ -67,7 +67,7 @@ function App() {
           <Navbar />
           <Switch>
            
-            <Route component={DetallePoke} path="/detalle" exact />
+            <Route component={DetallePoke} path="/detalle_poke" exact />
             <Route component={Lista} path="/lista" exact />
             <Route component={ForgotPassword} path="/recover_password" exact />
             <Route component={Register} path="/register" exact/>

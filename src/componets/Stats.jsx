@@ -12,7 +12,7 @@ const Stats = ({ url }) => {
     fetchData();
   }, [dispatch]);
 
-  const pokemon = useSelector((store) => store.pokemones.unPokemon);
+  const pokemon = useSelector((store) => store.pokemones.buscarPokemon);
   /*  console.log(pokemon); */
 
   return pokemon ? (

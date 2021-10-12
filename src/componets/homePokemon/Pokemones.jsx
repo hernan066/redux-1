@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {
@@ -6,7 +6,7 @@ import {
   obtenerPokemonesAccion,
   siguientePokemonAccion,
   unPokeDetalleAccion,
-} from "../redux/pokeDucks";
+} from "../../redux/pokeDucks";
 import Detalle from "./Detalle";
 
 
